@@ -25,7 +25,7 @@ const createUser = (request, response) => {
 
 //READ a user's information
 const getUserById = (request, response) => {
-    // Path param NOT Query param, no ?id= in the URL
+    // Path param NOT Query param, so no ?id= in the URL, just the number
     let id = parseInt(request.params.id);
 
     connection.query('SELECT * FROM users WHERE userid = $1', [id], (error, results) => {
